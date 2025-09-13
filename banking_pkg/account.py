@@ -6,7 +6,14 @@ def deposit(balance):
     return balance + int(amount)
 
 def withdraw(balance):
-    amount = input("Enter amount to withdraw: $")
+    while True:
+        amount = input("Enter amount to withdraw: $")
+        if int(amount) > balance:
+            print("Sorry. You do not have appropriate funds")
+            print("Here is your current balance: $" + str(balance))
+        else:
+            break
+    
     return balance - int(amount)
 
 def logout(name):
